@@ -17,21 +17,38 @@ const styles = StyleSheet.create({
         flex: 0,
         width: width / 2 - 10
     },
+    buttonSecondary: {
+        backgroundColor: '#a6a6a6'
+    },
+    buttonAccent: {
+        backgroundColor: '#FE6500'
+    },
     text: {
         color: '#fff',
         fontSize: 28
+    },
+    textSecondary: {        
+        color: '#060606'
     }
 })
 
-export default ({onPress, text, size}) => {
+export default ({onPress, text, size, theme}) => {
     const buttonStyles = [styles.button]
+    const textStyles = [styles.text]
 
     if(size === 'double')
         buttonStyles.push(styles.buttonDouble)
 
+    if(theme === 'secondary') {
+        buttonStyles.push(styles.buttonSecondary)
+        textStyles.push(styles.textSecondary)
+    } else if (theme === 'accent') {
+        buttonStyles.push(styles.buttonAccent)
+    }
+
     return (
         <TouchableOpacity style={buttonStyles} onPress={onPress}>
-            <Text style={styles.text}>{text}</Text>
+            <Text style={textStyles}>{text}</Text>
         </TouchableOpacity>
     )
 }
