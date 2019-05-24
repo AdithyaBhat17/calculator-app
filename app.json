@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "A simple calculator app built with react native",
+    "githubUrl": "https://github.com/AdithyaBhat17/calculator-app"
   }
 }
